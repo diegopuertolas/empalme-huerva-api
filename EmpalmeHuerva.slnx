@@ -1,0 +1,8 @@
+<Solution>
+    <Folder Name="/src/">
+        <Project Path="src/EmpalmeHuerva.Api/EmpalmeHuerva.Api.csproj" />
+        <Project Path="src/EmpalmeHuerva.Domain/EmpalmeHuerva.Domain.csproj" />
+        <Project Path="src/EmpalmeHuerva.Repositories/EmpalmeHuerva.Repositories.csproj" />
+        <Project Path="src/EmpalmeHuerva.Services/EmpalmeHuerva.Services.csproj" />
+    </Folder>
+</Solution>
