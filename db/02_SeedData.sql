@@ -1,7 +1,6 @@
 USE [EmpalmeHuervaDb];
 GO
 
--- 1. Demarcaciones
 INSERT INTO dbo.Positions (Name, Abbreviation) VALUES
 (N'Portero', N'POR'),
 (N'Defensa', N'DEF'),
@@ -10,7 +9,6 @@ INSERT INTO dbo.Positions (Name, Abbreviation) VALUES
 (N'Delantero', N'DEL');
 GO
 
--- 2. Plantilla Empalme del Huerva
 INSERT INTO dbo.Players (FirstName, LastName, Nickname, JerseyNumber, IsCaptain, PositionId) VALUES
 (N'Adahy', N'Álvarez', NULL, 1, 0, 4),
 (N'Diego', N'Puértolas', NULL, 4, 0, 3),
@@ -24,19 +22,16 @@ INSERT INTO dbo.Players (FirstName, LastName, Nickname, JerseyNumber, IsCaptain,
 (N'Marcos', N'Regaño', NULL, 14, 0, 5);
 GO
 
--- 3. Cuerpo técnico
 INSERT INTO dbo.StaffMembers (FullName, Role, IsHeadCoach, IsActive) VALUES
 (N'Emilio', N'Entrenador Principal', 1, 1)
 GO
 
--- 4. Partidos
 INSERT INTO dbo.Matches (Opponent, Competition, MatchDate, GoalsFor, GoalsAgainst, IsHomeGame, IsPlayed) VALUES
 (N'Atlético Ebro F7', N'Liga MLA Aragón - 3ªB G3', '2026-10-18 17:00:00', 3, 1, 1, 1),
 (N'Real Zaragoza Peñas', N'Liga MLA Aragón - 3ªB G3', '2026-10-25 18:30:00', 2, 2, 0, 1),
 (N'CD Monzalbarba', N'Liga MLA Aragón - 3ªB G3', '2026-11-29 17:00:00', NULL, NULL, 1, 0);
 GO
 
--- 5. Estadísticas por partido
 INSERT INTO dbo.PlayerMatchStats (MinutesPlayed, Goals, Assists, YellowCards, WasStarter, PlayerId, MatchId) VALUES
 (50, 0, 0, 0, 1, 1, 1),
 (50, 1, 0, 0, 1, 2, 1),
@@ -47,7 +42,6 @@ INSERT INTO dbo.PlayerMatchStats (MinutesPlayed, Goals, Assists, YellowCards, Wa
 (45, 1, 0, 0, 1, 5, 2);
 GO
 
--- 6. Socios y aficionados
 INSERT INTO dbo.Fans (FullName, Email, MemberNumber, JoinDate) VALUES
 (N'Laura Sánchez', N'laura.sanchez@example.com', 101, '2026-09-01'),
 (N'Pablo Navarro', N'pablo.navarro@example.com', 102, '2026-09-05'),
