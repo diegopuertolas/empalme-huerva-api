@@ -16,4 +16,11 @@ public class PositionService : IPositionService
     {
         return await _repository.GetAllPositions();
     }
+
+    public async Task<Position?> GetPositionById(int id)
+    {
+        if (id <= 0) throw new ArgumentException("El ID debe ser mayor que cero");
+
+        return await _repository.GetPositionById(id);
+    }
 }

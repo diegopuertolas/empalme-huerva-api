@@ -44,4 +44,36 @@ public class PositionRepository : IPositionRepository
 
         return positions;
     }
+
+    public async Task<Position?> GetPositionById(int id)
+    {
+        Position? position = null;
+
+        using (var connection = new SqlConnection(_connectionString))
+        {
+            await connection.OpenAsync();
+
+            string query = "SELECT Id, Name, Abbreviation FROM Positions WHERE Id = @Id";
+
+            using (var command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@Id", id);
+
+                using (var reader = await command.ExecuteReaderAsync())
+                {
+                    if (await reader.ReadAsync())
+                    {
+                        position = new Position
+                        {
+                            Id = reader.GetInt32(0),
+                            Name = reader.GetString(1),
+                            Abbreviation = reader.GetString(2)
+                        };
+                    }
+                }
+            }
+        }
+
+        return position;
+    }
 }

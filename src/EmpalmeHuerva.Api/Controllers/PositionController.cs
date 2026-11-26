@@ -1,3 +1,4 @@
+using System.Net.NetworkInformation;
 using EmpalmeHuerva.Domain.Entities;
 using EmpalmeHuerva.Services.PositionService;
 using Microsoft.AspNetCore.Mvc;
@@ -18,7 +19,16 @@ public class PositionController : ControllerBase
     [HttpGet]
     public async Task<ActionResult<IEnumerable<Position>>> GetAllPositions()
     {
-        var positions = await _service.GetAllPositions();
-        return Ok(positions);
+        return Ok(await _service.GetAllPositions());
+    }
+
+    [HttpGet("{id}")]
+    public async Task<ActionResult<Position?>> GetPositionById(int id)
+    {
+        var position = await _service.GetPositionById(id);
+
+        if (position is null) return NotFound();
+
+        return Ok(position);
     }
 }
