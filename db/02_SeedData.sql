@@ -27,9 +27,9 @@ INSERT INTO dbo.StaffMembers (FullName, Role, IsHeadCoach, IsActive) VALUES
 GO
 
 INSERT INTO dbo.Matches (Opponent, Competition, MatchDate, GoalsFor, GoalsAgainst, IsHomeGame, IsPlayed) VALUES
-(N'Atlético Ebro F7', N'Liga MLA Aragón - 3ªB G3', '2026-10-18 17:00:00', 3, 1, 1, 1),
-(N'Real Zaragoza Peñas', N'Liga MLA Aragón - 3ªB G3', '2026-10-25 18:30:00', 2, 2, 0, 1),
-(N'CD Monzalbarba', N'Liga MLA Aragón - 3ªB G3', '2026-11-29 17:00:00', NULL, NULL, 1, 0);
+(N'Atlético Ebro F7', N'Liga MLA Aragón - 3ªB G3', '2026-10-18 17:00:00 +01:00', 3, 1, 1, 1),
+(N'Real Zaragoza Peñas', N'Liga MLA Aragón - 3ªB G3', '2026-10-25 18:30:00 +01:00', 2, 2, 0, 1),
+(N'CD Monzalbarba', N'Liga MLA Aragón - 3ªB G3', '2026-11-29 17:00:00 +01:00', NULL, NULL, 1, 0);
 GO
 
 INSERT INTO dbo.PlayerMatchStats (MinutesPlayed, Goals, Assists, YellowCards, WasStarter, PlayerId, MatchId) VALUES
@@ -43,7 +43,7 @@ INSERT INTO dbo.PlayerMatchStats (MinutesPlayed, Goals, Assists, YellowCards, Wa
 GO
 
 INSERT INTO dbo.Fans (FullName, Email, MemberNumber, JoinDate) VALUES
-(N'Laura Sánchez', N'laura.sanchez@example.com', 101, '2026-09-01'),
-(N'Pablo Navarro', N'pablo.navarro@example.com', 102, '2026-09-05'),
-(N'Elena Torres', N'elena.torres@example.com', 103, '2026-09-12');
+(N'Laura Sánchez', N'laura.sanchez@example.com', 101, '2026-09-01 10:00 +01:00'),
+(N'Pablo Navarro', N'pablo.navarro@example.com', 102, '2026-09-05 12:30 +01:00'),
+(N'Elena Torres', N'elena.torres@example.com', 103, '2026-09-12 17:00 +01:00');
 GO
